@@ -1,0 +1,105 @@
+<html>
+	<head>
+		<title>
+			Matrix Calculator
+		</title>
+	</head>
+	<body style="font-family: monospace;">
+		<table align=top>
+			<tr>
+				<td><button onclick="Create(M,Number(prompt('Enter N size of matrix')))">Create</button></td>
+				<td><button onclick='Input(M)'>Input</button></td>
+				<td><button onclick='Output(M)'>Output</button></td>
+				<td><button onclick='Inv(M)'>Inverse by Gaussian Elimination</button></td>
+				<td><button onclick='alert(Det(M))'>Laplace Expansion</button></td>
+			</tr>
+			<tr>
+				<td><div id='log'><hr/>Operations<hr/></div></td>
+				<td><div id='matrix'><hr/>Matrix<hr/></div></td>
+				<td><div id='inverse'><hr/>Inverse<hr/></div></td>
+			</tr>
+		<script>
+			alert("To use, first create a matrix M of size N, then input the values, then either use Inverse by Gaussian Expansion to calculate decomposition, or Laplace Expansion to calculate determinant");
+			var M=[];
+			function Create(M,N=3) { //Takes empty array M and creates empty elements to return an NxN matrix M
+				for (var i=0;i<N;i++) 
+					M.push(new Array(N));
+				return(M);
+			}
+			function Output(M,div='matrix') { //Takes matrix M and gives output on the HTML page and in the console log
+				for (var i=0;i<M.length;i++) {
+					document.getElementById(div).innerHTML+='<br>'+M[i];
+					console.log(M[i]);
+				}
+				document.getElementById(div).innerHTML+='<br>';
+			}
+			function Multiply(M,A,B) { //M=A.B
+				for (var i=0;i<A.length;i++) {
+					for(var j=0;j<B.length;j++) {
+						var t=0;
+						for (var r=0; r<B.length; r++)
+							t+=A[i][r]*B[r][j];
+						M[i][j]=t;
+					}
+				}
+				Output(M,'inverse');
+			}
+			function R(M,a,b,p=1,q=0) { //Ra->pRa+qRb in matrix M. Returns an elementary matrix E which represents the row operation done
+				var E=[];
+				Create(E,M.length);
+				E.forEach(r => r.fill(0));
+				for (var i=0;i<E.length;i++)
+					E[i][i]=1;
+				E[a][a]=p;
+				E[a][b]+=q;
+				for (var j=0;j<M.length;j++) {
+					M[a][j]=p*M[a][j]+q*M[b][j];
+				}
+				Output(M);
+				document.getElementById('log').innerHTML+='<br>'+'R'+a+'→'+p+'R'+a+' + '+q+'R'+b;
+				return(E);
+			}
+			function Auto(M) { //Gaussian Elimination to get identity matrix from given matrix through row transformations
+				var I=[];
+				for (var j=0;j<M.length;j++) {	//Makes it into upper triangular matrix
+					for (var t=M.length-1; !M[j][j]; t--)	//If that diagonal element M[j][j] is zero, add a row t which has non zero M[t][j] in that column j
+						if (!M[t][j]) 
+							I.push(R(M,j,t,1,1));	// Rj -> Rj + Rt
+					I.push(R(M,j,j,1/M[j][j]));	//Divide the row j by that diagonal element M[j][j] so that now M[j][j]=1
+					for (var t=M.length-1;t>j;t--)	//Row reduction to make entry 0 in column j for all rows below j
+						I.push(R(M,t,j,1,-1*M[t][j]));	//Rt -> Rt - (M[t][j])Rj
+				} 
+				for (j=M.length-1;j>0;j--) {	//Makes it into diagonol matrix
+					for (t=0;j>t;t++)	//Row reduction to make entry 0 in column j for all rows above j
+						I.push(R(M,t,j,1,-1*M[t][j])); //Rt -> Rt - (M[t][j])Rj
+				}
+				return I; //Returns an array of elementary matrices which represents all the row operations done to get identity matrix from given matrix
+			}
+			function Input(M) {	//Inputs the matrix elements from user
+				for (var i=0;i<M.length;i++) {
+					for (var j=0;j<M.length;j++)
+						M[i][j]=prompt('M[' + i + '][' + j + ']?');
+				}
+			}
+			function Det(M) { //Laplace Expansion recursive algorithm
+				if (M.length==1)
+					return M[0][0];
+				else {
+					var D=0;
+					for (var j=0;j<M.length;j++)
+						D+= Math.pow(-1,0+j) * M[0][j] * Det(M.filter((_, i) => i!==0 ).map(r => r.filter((_, i) =>  i!==j))); 
+					return D;
+				}
+			}
+			function Inv(M) { //Multiplies the elementary matrices with an identity matrix to get the inverse matrix I
+				var I=[];
+				Create(I,M.length);
+				I.forEach(r => r.fill(0));
+				for (var i=0;i<I.length;i++) 
+					I[i][i]=1;
+				Auto(M).forEach(r => Multiply(I,r,I)); 
+				return I;
+			}
+		</script>
+	</body>
+</html>
