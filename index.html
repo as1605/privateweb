@@ -10,6 +10,12 @@
 			h1 {
 				text-align: center;
 			}
+			h3 {
+				text-align: center;
+			}
+			h4 {
+				text-align: center;
+			}
 			a {
 				font-weight:bold;
 				text-decoration: none;
@@ -20,6 +26,9 @@
 			hr {
 				border-style:solid;
 			}
+			code {
+				font-weight: bold;
+			}
 		</style>
 	</head>
 	<body>
@@ -27,6 +36,13 @@
 			<h1>Hello World!</h1>
 			<h3>Welcome to the personal webpage of Aditya Singh</h3>
 		</header>
+		<div style= "display: flex; justify-content: space-evenly;">
+			<a style="color: #0A66C2" target="_blank" href="https://www.linkedin.com/in/1605-aditya-singh/">LinkedIn</a>
+			<a style="color: #333333" target="_blank" href="https://github.com/as1605">GitHub</a>
+			<a style="color: #1F8ACB" target="_blank" href="https://codeforces.com/profile/as1605">CodeForces</a>
+			<a style="color: #5B4638" target="_blank" href="https://www.codechef.com/users/as1605">CodeChef</a>
+			<a style="color: #4FCE5D" target="_blank" href="https://chat.whatsapp.com/9013047722">WhatsApp</a>
+		</div>
 		<hr/>
 		<section>
 			<h4>Some Useful links</h5>
@@ -78,12 +94,34 @@
 		</section>
 		<hr/>
 		<footer>
-		<div style= "display: flex;justify-content: space-evenly;" >
-			<a style="color: #0a66c2" target="_blank" href="https://www.linkedin.com/in/1605-aditya-singh/">LinkedIn</a>
-			<a style="color: #333333" target="_blank" href="https://github.com/as1605">GitHub</a>
-			<a style="color: #1F8ACB" target="_blank" href="https://codeforces.com/profile/as1605">CodeForces</a>
-			<a style="color: #5b4638" target="_blank" href="https://www.codechef.com/users/as1605">CodeChef</a>
-		</div>
+			<h4>How to create a user web page like this</h4>
+			<ol>
+				<li>Connect into IITD <a target="_blank" href="http://www.cc.iitd.ernet.in/CSC/index.php?option=com_content&view=article&id=104&Itemid=135">VPN</a> if you're not on campus. Make sure to latest version of <a target="_blank" href="https://openvpn.net/download-open-vpn/">OpenVPN Connect</a> client </li>
+				<li>Connect to your <a target="_blank" href="http://www.cc.iitd.ernet.in/CSC/index.php?option=com_content&view=article&id=95&Itemid=121">CSC machine</a> using SSH. Go to your terminal (bash/zsh/command prompt) and enter command in format <code>ssh ee1200461@ssh1.iitd.ac.in </code> where you replace ee1200461 with your own kerberos id. Accept all certificates, and then type in your password and press enter.</li>
+				<li>Create a private_html folder in your home (<code>~</code>) directory
+<pre>
+<code>cd ~</code>
+<code>mkdir private_html</code>
+<code>cd private_html</code>
+</pre>
+				<li>Create a file index.html in that folder, this, by default will be your home page when someone hits your website. You can explore more details <a target="_blank" href="http://www.cc.iitd.ernet.in/CSC/index.php?option=com_content&view=article&id=107&Itemid=146">here</a>.
+<pre>
+<code>touch index.html</code>
+<code>vim index.html</code>
+<code>i</code>
+&lthtml&gt
+	&lthead&gt
+		&lttitle&gtMy Home Page&lt/title&gt
+	&lt/head&gt
+	&ltbody&gt
+		Hello World!
+	&lt/body&gt
+&lt/html&gt
+<code>:wq</code>
+</pre>
+				</li>
+				<li>Congrats! You have created your user web page! This will be accessible inside the campus network as well as through IITD VPN. You can learn further about <a target="_blank" href="https://www.w3schools.com/html/default.asp">HTML</a> or <a target="_blank" href="https://www.w3schools.com/php/default.asp">PHP</a> to see what all you can do! Do share your ideas and your webpage with me :)</li>
+			</ol>
 		</footer>
 	</body>
 </html>
