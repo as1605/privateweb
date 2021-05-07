@@ -1,0 +1,1424 @@
+<html>
+	<head>
+		<title>CoWIN API</title>
+	</head>
+	<body>
+		<input type=text id="day" value="31">Day</input>
+		<input type=text id="month" value="05">Month</input>
+		<input type=text id="year" value="2021">Year</input>
+		<br>
+		<input type=text id="pin" value="110001">PIN Code</input>
+		<button onclick=pinAPI()>Get by PIN CODE</button>
+		
+		<select name=dst id="district">
+			<option value='1'>
+			Andaman and Nicobar Islands - North and Middle Andaman
+			</option>
+			<option value='3'>
+			Andaman and Nicobar Islands - Nicobar
+			</option>
+			<option value='7'>
+			Andhra Pradesh - Kurnool
+			</option>
+			<option value='8'>
+			Andhra Pradesh - Visakhapatnam
+			</option>
+			<option value='9'>
+			Andhra Pradesh - Anantapur
+			</option>
+			<option value='12'>
+			Andhra Pradesh - Prakasam
+			</option>
+			<option value='13'>
+			Andhra Pradesh - Sri Potti Sriramulu Nellore
+			</option>
+			<option value='17'>
+			Arunachal Pradesh - Itanagar Capital Complex
+			</option>
+			<option value='20'>
+			Arunachal Pradesh - Changlang
+			</option>
+			<option value='45'>
+			Assam - Tinsukia
+			</option>
+			<option value='46'>
+			Assam - Baksa
+			</option>
+			<option value='47'>
+			Assam - Barpeta
+			</option>
+			<option value='53'>
+			Assam - Golaghat
+			</option>
+			<option value='60'>
+			Assam - Goalpara
+			</option>
+			<option value='61'>
+			Assam - Kokrajhar
+			</option>
+			<option value='66'>
+			Assam - Cachar
+			</option>
+			<option value='69'>
+			Assam - Karimganj
+			</option>
+			<option value='70'>
+			Bihar - Madhepura
+			</option>
+			<option value='71'>
+			Bihar - Saharsa
+			</option>
+			<option value='72'>
+			Bihar - Supaul
+			</option>
+			<option value='73'>
+			Bihar - Purnia
+			</option>
+			<option value='74'>
+			Bihar - Araria
+			</option>
+			<option value='75'>
+			Bihar - Katihar
+			</option>
+			<option value='76'>
+			Bihar - Kishanganj
+			</option>
+			<option value='78'>
+			Bihar - Arwal
+			</option>
+			<option value='80'>
+			Bihar - Kaimur
+			</option>
+			<option value='81'>
+			Bihar - Rohtas
+			</option>
+			<option value='83'>
+			Bihar - Banka
+			</option>
+			<option value='85'>
+			Bihar - Munger
+			</option>
+			<option value='87'>
+			Bihar - Sheohar
+			</option>
+			<option value='88'>
+			Bihar - Sitamarhi
+			</option>
+			<option value='89'>
+			Bihar - Vaishali
+			</option>
+			<option value='90'>
+			Bihar - Nalanda
+			</option>
+			<option value='91'>
+			Bihar - Jehanabad
+			</option>
+			<option value='92'>
+			Bihar - Nawada
+			</option>
+			<option value='93'>
+			Bihar - Sheikhpura
+			</option>
+			<option value='94'>
+			Bihar - Darbhanga
+			</option>
+			<option value='95'>
+			Bihar - Madhubani
+			</option>
+			<option value='96'>
+			Bihar - Samastipur
+			</option>
+			<option value='97'>
+			Bihar - Patna
+			</option>
+			<option value='98'>
+			Bihar - Begusarai
+			</option>
+			<option value='99'>
+			Bihar - Bhojpur
+			</option>
+			<option value='100'>
+			Bihar - Buxar
+			</option>
+			<option value='102'>
+			Bihar - Saran
+			</option>
+			<option value='103'>
+			Bihar - Siwan
+			</option>
+			<option value='104'>
+			Bihar - Gopalganj
+			</option>
+			<option value='105'>
+			Bihar - East Champaran
+			</option>
+			<option value='106'>
+			Bihar - West Champaran
+			</option>
+			<option value='107'>
+			Bihar - Jamui
+			</option>
+			<option value='108'>
+			Chandigarh - Chandigarh
+			</option>
+			<option value='109'>
+			Chhattisgarh - Raipur
+			</option>
+			<option value='110'>
+			Chhattisgarh - Balod
+			</option>
+			<option value='111'>
+			Chhattisgarh - Baloda bazar
+			</option>
+			<option value='112'>
+			Chhattisgarh - Balrampur
+			</option>
+			<option value='113'>
+			Chhattisgarh - Bastar
+			</option>
+			<option value='114'>
+			Chhattisgarh - Bemetara
+			</option>
+			<option value='115'>
+			Chhattisgarh - Bijapur
+			</option>
+			<option value='116'>
+			Chhattisgarh - Bilaspur
+			</option>
+			<option value='117'>
+			Chhattisgarh - Dantewada
+			</option>
+			<option value='118'>
+			Chhattisgarh - Dhamtari
+			</option>
+			<option value='119'>
+			Chhattisgarh - Durg
+			</option>
+			<option value='120'>
+			Chhattisgarh - Gariaband
+			</option>
+			<option value='121'>
+			Chhattisgarh - Janjgir-Champa
+			</option>
+			<option value='122'>
+			Chhattisgarh - Jashpur
+			</option>
+			<option value='123'>
+			Chhattisgarh - Kanker
+			</option>
+			<option value='124'>
+			Chhattisgarh - Kondagaon
+			</option>
+			<option value='125'>
+			Chhattisgarh - Korba
+			</option>
+			<option value='126'>
+			Chhattisgarh - Koriya
+			</option>
+			<option value='127'>
+			Chhattisgarh - Mahasamund
+			</option>
+			<option value='128'>
+			Chhattisgarh - Mungeli
+			</option>
+			<option value='129'>
+			Chhattisgarh - Narayanpur
+			</option>
+			<option value='130'>
+			Chhattisgarh - Raigarh
+			</option>
+			<option value='131'>
+			Chhattisgarh - Rajnandgaon
+			</option>
+			<option value='133'>
+			Chhattisgarh - Surajpur
+			</option>
+			<option value='134'>
+			Chhattisgarh - Surguja
+			</option>
+			<option value='136'>
+			Chhattisgarh - Gaurela Pendra Marwahi 
+			</option>
+			<option value='137'>
+			Dadra and Nagar Haveli - Dadra and Nagar Haveli
+			</option>
+			<option value='138'>
+			Daman and Diu - Daman
+			</option>
+			<option value='139'>
+			Daman and Diu - Diu
+			</option>
+			<option value='140'>
+			Delhi - New Delhi
+			</option>
+			<option value='141'>
+			Delhi - Central Delhi
+			</option>
+			<option value='142'>
+			Delhi - West Delhi
+			</option>
+			<option value='143'>
+			Delhi - North West Delhi
+			</option>
+			<option value='144'>
+			Delhi - South East Delhi
+			</option>
+			<option value='146'>
+			Delhi - North Delhi
+			</option>
+			<option value='147'>
+			Delhi - North East Delhi
+			</option>
+			<option value='148'>
+			Delhi - Shahdara
+			</option>
+			<option value='149'>
+			Delhi - South Delhi
+			</option>
+			<option value='150'>
+			Delhi - South West Delhi
+			</option>
+			<option value='151'>
+			Goa - North Goa
+			</option>
+			<option value='152'>
+			Goa - South Goa
+			</option>
+			<option value='154'>
+			Gujarat - Ahmedabad
+			</option>
+			<option value='156'>
+			Gujarat - Kheda
+			</option>
+			<option value='157'>
+			Gujarat - Surendranagar
+			</option>
+			<option value='158'>
+			Gujarat - Aravalli
+			</option>
+			<option value='159'>
+			Gujarat - Banaskantha
+			</option>
+			<option value='160'>
+			Gujarat - Mehsana
+			</option>
+			<option value='161'>
+			Gujarat - Patan
+			</option>
+			<option value='162'>
+			Gujarat - Sabarkantha
+			</option>
+			<option value='163'>
+			Gujarat - Dang
+			</option>
+			<option value='165'>
+			Gujarat - Surat
+			</option>
+			<option value='166'>
+			Gujarat - Tapi
+			</option>
+			<option value='167'>
+			Gujarat - Valsad
+			</option>
+			<option value='168'>
+			Gujarat - Devbhumi Dwaraka
+			</option>
+			<option value='169'>
+			Gujarat - Jamnagar
+			</option>
+			<option value='170'>
+			Gujarat - Kutch
+			</option>
+			<option value='171'>
+			Gujarat - Morbi
+			</option>
+			<option value='172'>
+			Gujarat - Porbandar
+			</option>
+			<option value='173'>
+			Gujarat - Rajkot
+			</option>
+			<option value='175'>
+			Gujarat - Bhavnagar
+			</option>
+			<option value='176'>
+			Gujarat - Botad
+			</option>
+			<option value='177'>
+			Gujarat - Gir Somnath
+			</option>
+			<option value='178'>
+			Gujarat - Junagadh
+			</option>
+			<option value='179'>
+			Gujarat - Anand
+			</option>
+			<option value='180'>
+			Gujarat - Bharuch
+			</option>
+			<option value='181'>
+			Gujarat - Chhotaudepur
+			</option>
+			<option value='182'>
+			Gujarat - Dahod
+			</option>
+			<option value='183'>
+			Gujarat - Mahisagar
+			</option>
+			<option value='184'>
+			Gujarat - Narmada
+			</option>
+			<option value='185'>
+			Gujarat - Panchmahal
+			</option>
+			<option value='191'>
+			Haryana - Hisar
+			</option>
+			<option value='204'>
+			Haryana - Jind
+			</option>
+			<option value='208'>
+			Himachal Pradesh - Shimla
+			</option>
+			<option value='209'>
+			Himachal Pradesh - Solan
+			</option>
+			<option value='210'>
+			Himachal Pradesh - Lahaul Spiti
+			</option>
+			<option value='211'>
+			Himachal Pradesh - Kullu
+			</option>
+			<option value='213'>
+			Himachal Pradesh - Kangra
+			</option>
+			<option value='214'>
+			Himachal Pradesh - Chamba
+			</option>
+			<option value='215'>
+			Himachal Pradesh - Mandi
+			</option>
+			<option value='216'>
+			Himachal Pradesh - Kinnaur
+			</option>
+			<option value='217'>
+			Himachal Pradesh - Hamirpur
+			</option>
+			<option value='218'>
+			Himachal Pradesh - Una
+			</option>
+			<option value='219'>
+			Himachal Pradesh - Bilaspur
+			</option>
+			<option value='220'>
+			Jammu and Kashmir - Srinagar
+			</option>
+			<option value='221'>
+			Jammu and Kashmir - Kulgam
+			</option>
+			<option value='222'>
+			Jammu and Kashmir - Shopian
+			</option>
+			<option value='223'>
+			Jammu and Kashmir - Bandipore
+			</option>
+			<option value='224'>
+			Jammu and Kashmir - Anantnag
+			</option>
+			<option value='225'>
+			Jammu and Kashmir - Baramulla
+			</option>
+			<option value='226'>
+			Jammu and Kashmir - Kupwara
+			</option>
+			<option value='227'>
+			Jammu and Kashmir - Pulwama
+			</option>
+			<option value='228'>
+			Jammu and Kashmir - Ganderbal
+			</option>
+			<option value='229'>
+			Jammu and Kashmir - Budgam
+			</option>
+			<option value='230'>
+			Jammu and Kashmir - Jammu
+			</option>
+			<option value='231'>
+			Jammu and Kashmir - Kishtwar
+			</option>
+			<option value='232'>
+			Jammu and Kashmir - Doda
+			</option>
+			<option value='233'>
+			Jammu and Kashmir - Udhampur
+			</option>
+			<option value='234'>
+			Jammu and Kashmir - Kathua
+			</option>
+			<option value='235'>
+			Jammu and Kashmir - Ramban
+			</option>
+			<option value='236'>
+			Jammu and Kashmir - Samba
+			</option>
+			<option value='237'>
+			Jammu and Kashmir - Rajouri
+			</option>
+			<option value='238'>
+			Jammu and Kashmir - Poonch
+			</option>
+			<option value='239'>
+			Jammu and Kashmir - Reasi
+			</option>
+			<option value='240'>
+			Jharkhand - Ranchi
+			</option>
+			<option value='241'>
+			Jharkhand - Koderma
+			</option>
+			<option value='242'>
+			Jharkhand - Bokaro
+			</option>
+			<option value='243'>
+			Jharkhand - Garhwa
+			</option>
+			<option value='244'>
+			Jharkhand - Latehar
+			</option>
+			<option value='245'>
+			Jharkhand - Chatra
+			</option>
+			<option value='246'>
+			Jharkhand - Palamu
+			</option>
+			<option value='247'>
+			Jharkhand - East Singhbhum
+			</option>
+			<option value='248'>
+			Jharkhand - Seraikela Kharsawan
+			</option>
+			<option value='249'>
+			Jharkhand - Simdega
+			</option>
+			<option value='250'>
+			Jharkhand - Lohardaga
+			</option>
+			<option value='251'>
+			Jharkhand - Gumla
+			</option>
+			<option value='252'>
+			Jharkhand - Khunti
+			</option>
+			<option value='253'>
+			Jharkhand - Deoghar
+			</option>
+			<option value='254'>
+			Jharkhand - Ramgarh
+			</option>
+			<option value='255'>
+			Jharkhand - Hazaribagh
+			</option>
+			<option value='256'>
+			Jharkhand - Giridih
+			</option>
+			<option value='257'>
+			Jharkhand - Dhanbad
+			</option>
+			<option value='258'>
+			Jharkhand - Dumka
+			</option>
+			<option value='259'>
+			Jharkhand - Jamtara
+			</option>
+			<option value='260'>
+			Jharkhand - Sahebganj
+			</option>
+			<option value='261'>
+			Jharkhand - Pakur
+			</option>
+			<option value='262'>
+			Jharkhand - Godda
+			</option>
+			<option value='263'>
+			Jharkhand - West Singhbhum
+			</option>
+			<option value='264'>
+			Karnataka - Belgaum
+			</option>
+			<option value='266'>
+			Karnataka - Mysore
+			</option>
+			<option value='267'>
+			Karnataka - Gulbarga
+			</option>
+			<option value='268'>
+			Karnataka - Chitradurga
+			</option>
+			<option value='270'>
+			Karnataka - Bagalkot
+			</option>
+			<option value='271'>
+			Karnataka - Chamarajanagar
+			</option>
+			<option value='272'>
+			Karnataka - Bidar
+			</option>
+			<option value='274'>
+			Karnataka - Bellary
+			</option>
+			<option value='276'>
+			Karnataka - Bangalore Rural
+			</option>
+			<option value='277'>
+			Karnataka - Kolar
+			</option>
+			<option value='278'>
+			Karnataka - Dharwad
+			</option>
+			<option value='280'>
+			Karnataka - Gadag
+			</option>
+			<option value='281'>
+			Karnataka - Uttar Kannada
+			</option>
+			<option value='282'>
+			Karnataka - Koppal
+			</option>
+			<option value='283'>
+			Karnataka - Kodagu
+			</option>
+			<option value='284'>
+			Karnataka - Raichur
+			</option>
+			<option value='285'>
+			Karnataka - Yadgir
+			</option>
+			<option value='287'>
+			Karnataka - Shimoga
+			</option>
+			<option value='288'>
+			Karnataka - Tumkur
+			</option>
+			<option value='289'>
+			Karnataka - Hassan
+			</option>
+			<option value='290'>
+			Karnataka - Mandya
+			</option>
+			<option value='291'>
+			Karnataka - Chikkaballapur
+			</option>
+			<option value='292'>
+			Karnataka - Ramanagara
+			</option>
+			<option value='293'>
+			Karnataka - Vijayapura
+			</option>
+			<option value='294'>
+			Karnataka - BBMP
+			</option>
+			<option value='311'>
+			Lakshadweep - Lakshadweep
+			</option>
+			<option value='312'>
+			Madhya Pradesh - Bhopal
+			</option>
+			<option value='313'>
+			Madhya Pradesh - Gwalior
+			</option>
+			<option value='315'>
+			Madhya Pradesh - Jabalpur
+			</option>
+			<option value='316'>
+			Madhya Pradesh - Rewa
+			</option>
+			<option value='317'>
+			Madhya Pradesh - Sagar
+			</option>
+			<option value='319'>
+			Madhya Pradesh - Mandsaur
+			</option>
+			<option value='321'>
+			Madhya Pradesh - Shajapur
+			</option>
+			<option value='322'>
+			Madhya Pradesh - Ratlam
+			</option>
+			<option value='324'>
+			Madhya Pradesh - Dewas
+			</option>
+			<option value='325'>
+			Madhya Pradesh - Tikamgarh
+			</option>
+			<option value='329'>
+			Madhya Pradesh - Umaria
+			</option>
+			<option value='330'>
+			Madhya Pradesh - Singrauli
+			</option>
+			<option value='331'>
+			Madhya Pradesh - Sidhi
+			</option>
+			<option value='332'>
+			Madhya Pradesh - Shahdol
+			</option>
+			<option value='333'>
+			Madhya Pradesh - Satna
+			</option>
+			<option value='334'>
+			Madhya Pradesh - Anuppur
+			</option>
+			<option value='335'>
+			Madhya Pradesh - Mandla
+			</option>
+			<option value='336'>
+			Madhya Pradesh - Dindori
+			</option>
+			<option value='337'>
+			Madhya Pradesh - Chhindwara
+			</option>
+			<option value='338'>
+			Madhya Pradesh - Balaghat
+			</option>
+			<option value='339'>
+			Madhya Pradesh - Khandwa
+			</option>
+			<option value='342'>
+			Madhya Pradesh - Burhanpur
+			</option>
+			<option value='350'>
+			Madhya Pradesh - Datia
+			</option>
+			<option value='352'>
+			Madhya Pradesh - Narsinghpur
+			</option>
+			<option value='353'>
+			Madhya Pradesh - Katni
+			</option>
+			<option value='355'>
+			Madhya Pradesh - Vidisha
+			</option>
+			<option value='356'>
+			Madhya Pradesh - Sehore
+			</option>
+			<option value='359'>
+			Madhya Pradesh - Raisen
+			</option>
+			<option value='365'>
+			Maharashtra - Nagpur
+			</option>
+			<option value='367'>
+			Maharashtra - Buldhana
+			</option>
+			<option value='368'>
+			Maharashtra - Yavatmal
+			</option>
+			<option value='370'>
+			Maharashtra - Bhandara
+			</option>
+			<option value='379'>
+			Maharashtra - Gadchiroli
+			</option>
+			<option value='381'>
+			Maharashtra - Osmanabad
+			</option>
+			<option value='382'>
+			Maharashtra - Nanded
+			</option>
+			<option value='386'>
+			Maharashtra - Hingoli
+			</option>
+			<option value='387'>
+			Maharashtra - Nandurbar
+			</option>
+			<option value='388'>
+			Maharashtra - Dhule
+			</option>
+			<option value='390'>
+			Maharashtra - Jalgaon
+			</option>
+			<option value='391'>
+			Maharashtra - Ahmednagar
+			</option>
+			<option value='400'>
+			Manipur - Churachandpur
+			</option>
+			<option value='406'>
+			Manipur - Ukhrul
+			</option>
+			<option value='414'>
+			Meghalaya - East Khasi Hills
+			</option>
+			<option value='416'>
+			Meghalaya - West Jaintia Hills
+			</option>
+			<option value='418'>
+			Meghalaya - East Jaintia Hills
+			</option>
+			<option value='419'>
+			Meghalaya - West Khasi Hills
+			</option>
+			<option value='420'>
+			Meghalaya - West Garo Hills
+			</option>
+			<option value='422'>
+			Meghalaya - South West Garo Hills
+			</option>
+			<option value='423'>
+			Meghalaya - North Garo Hills
+			</option>
+			<option value='424'>
+			Meghalaya - East Garo Hills
+			</option>
+			<option value='428'>
+			Mizoram - Kolasib
+			</option>
+			<option value='431'>
+			Mizoram - Lunglei
+			</option>
+			<option value='434'>
+			Nagaland - Dimapur
+			</option>
+			<option value='439'>
+			Nagaland - Mon
+			</option>
+			<option value='440'>
+			Nagaland - Tuensang
+			</option>
+			<option value='442'>
+			Nagaland - Zunheboto
+			</option>
+			<option value='446'>
+			Odisha - Khurda
+			</option>
+			<option value='450'>
+			Odisha - Kandhamal
+			</option>
+			<option value='453'>
+			Odisha - Sundargarh
+			</option>
+			<option value='456'>
+			Odisha - Mayurbhanj
+			</option>
+			<option value='465'>
+			Odisha - Nuapada
+			</option>
+			<option value='469'>
+			Odisha - Malkangiri
+			</option>
+			<option value='470'>
+			Odisha - Nabarangpur
+			</option>
+			<option value='475'>
+			Puducherry - Puducherry
+			</option>
+			<option value='476'>
+			Puducherry - Karaikal
+			</option>
+			<option value='479'>
+			Punjab - Kapurthala
+			</option>
+			<option value='480'>
+			Punjab - Ferozpur
+			</option>
+			<option value='481'>
+			Punjab - Hoshiarpur
+			</option>
+			<option value='482'>
+			Punjab - Mansa
+			</option>
+			<option value='483'>
+			Punjab - Barnala
+			</option>
+			<option value='485'>
+			Punjab - Amritsar
+			</option>
+			<option value='486'>
+			Punjab - Pathankot
+			</option>
+			<option value='487'>
+			Punjab - Fazilka
+			</option>
+			<option value='488'>
+			Punjab - Ludhiana
+			</option>
+			<option value='489'>
+			Punjab - Gurdaspur
+			</option>
+			<option value='490'>
+			Punjab - Sri Muktsar Sahib
+			</option>
+			<option value='491'>
+			Punjab - Moga
+			</option>
+			<option value='492'>
+			Punjab - Jalandhar
+			</option>
+			<option value='493'>
+			Punjab - Bathinda
+			</option>
+			<option value='494'>
+			Punjab - Patiala
+			</option>
+			<option value='495'>
+			Punjab - Tarn Taran
+			</option>
+			<option value='496'>
+			Punjab - SAS Nagar
+			</option>
+			<option value='497'>
+			Punjab - Rup Nagar
+			</option>
+			<option value='498'>
+			Punjab - Sangrur
+			</option>
+			<option value='499'>
+			Punjab - Faridkot
+			</option>
+			<option value='500'>
+			Punjab - SBS Nagar
+			</option>
+			<option value='505'>
+			Rajasthan - Jaipur I
+			</option>
+			<option value='508'>
+			Rajasthan - Bharatpur
+			</option>
+			<option value='510'>
+			Rajasthan - Jhunjhunu
+			</option>
+			<option value='511'>
+			Rajasthan - Dausa
+			</option>
+			<option value='512'>
+			Rajasthan - Alwar
+			</option>
+			<option value='516'>
+			Rajasthan - Baran
+			</option>
+			<option value='517'>
+			Rajasthan - Hanumangarh
+			</option>
+			<option value='520'>
+			Rajasthan - Dungarpur
+			</option>
+			<option value='522'>
+			Rajasthan - Pratapgarh
+			</option>
+			<option value='525'>
+			Rajasthan - Karauli
+			</option>
+			<option value='526'>
+			Rajasthan - Tonk
+			</option>
+			<option value='527'>
+			Rajasthan - Jaisalmer
+			</option>
+			<option value='528'>
+			Rajasthan - Barmer
+			</option>
+			<option value='529'>
+			Rajasthan - Pali
+			</option>
+			<option value='530'>
+			Rajasthan - Churu
+			</option>
+			<option value='531'>
+			Rajasthan - Sirohi
+			</option>
+			<option value='532'>
+			Rajasthan - Nagaur
+			</option>
+			<option value='533'>
+			Rajasthan - Jalore
+			</option>
+			<option value='535'>
+			Sikkim - East Sikkim
+			</option>
+			<option value='540'>
+			Tamil Nadu - Madurai
+			</option>
+			<option value='541'>
+			Tamil Nadu - Thanjavur
+			</option>
+			<option value='542'>
+			Tamil Nadu - Viluppuram
+			</option>
+			<option value='543'>
+			Tamil Nadu - Vellore
+			</option>
+			<option value='544'>
+			Tamil Nadu - Kanyakumari
+			</option>
+			<option value='545'>
+			Tamil Nadu - Salem
+			</option>
+			<option value='546'>
+			Tamil Nadu - Pudukkottai
+			</option>
+			<option value='547'>
+			Tamil Nadu - Cuddalore
+			</option>
+			<option value='548'>
+			Tamil Nadu - Tirunelveli
+			</option>
+			<option value='550'>
+			Tamil Nadu - Tirupattur
+			</option>
+			<option value='551'>
+			Tamil Nadu - Tenkasi
+			</option>
+			<option value='552'>
+			Tamil Nadu - Kallakurichi
+			</option>
+			<option value='553'>
+			Tamil Nadu - Tiruvannamalai
+			</option>
+			<option value='554'>
+			Tamil Nadu - Thoothukudi (Tuticorin)
+			</option>
+			<option value='555'>
+			Tamil Nadu - Ariyalur
+			</option>
+			<option value='556'>
+			Tamil Nadu - Dindigul
+			</option>
+			<option value='557'>
+			Tamil Nadu - Kanchipuram
+			</option>
+			<option value='558'>
+			Tamil Nadu - Namakkal
+			</option>
+			<option value='560'>
+			Tamil Nadu - Tiruchirappalli
+			</option>
+			<option value='561'>
+			Tamil Nadu - Sivaganga
+			</option>
+			<option value='562'>
+			Tamil Nadu - Krishnagiri
+			</option>
+			<option value='563'>
+			Tamil Nadu - Erode
+			</option>
+			<option value='565'>
+			Tamil Nadu - Chengalpet
+			</option>
+			<option value='566'>
+			Tamil Nadu - Dharmapuri
+			</option>
+			<option value='567'>
+			Tamil Nadu - Ramanathapuram
+			</option>
+			<option value='568'>
+			Tamil Nadu - Tiruppur
+			</option>
+			<option value='569'>
+			Tamil Nadu - Theni
+			</option>
+			<option value='570'>
+			Tamil Nadu - Perambalur
+			</option>
+			<option value='571'>
+			Tamil Nadu - Chennai
+			</option>
+			<option value='572'>
+			Tamil Nadu - Tiruvallur
+			</option>
+			<option value='574'>
+			Tamil Nadu - Tiruvarur
+			</option>
+			<option value='575'>
+			Tamil Nadu - Poonamallee
+			</option>
+			<option value='576'>
+			Tamil Nadu - Nagapattinam
+			</option>
+			<option value='577'>
+			Tamil Nadu - Nilgiris
+			</option>
+			<option value='578'>
+			Tamil Nadu - Attur
+			</option>
+			<option value='580'>
+			Tamil Nadu - Sivakasi
+			</option>
+			<option value='581'>
+			Telangana - Hyderabad
+			</option>
+			<option value='589'>
+			Telangana - Karimnagar
+			</option>
+			<option value='591'>
+			Telangana - Kumuram Bheem
+			</option>
+			<option value='594'>
+			Telangana - Mancherial
+			</option>
+			<option value='595'>
+			Telangana - Medak
+			</option>
+			<option value='597'>
+			Telangana - Nagarkurnool
+			</option>
+			<option value='614'>
+			Tripura - Dhalai
+			</option>
+			<option value='615'>
+			Tripura - Gomati
+			</option>
+			<option value='616'>
+			Tripura - Khowai
+			</option>
+			<option value='617'>
+			Tripura - North Tripura
+			</option>
+			<option value='618'>
+			Tripura - Sepahijala
+			</option>
+			<option value='619'>
+			Tripura - South Tripura
+			</option>
+			<option value='620'>
+			Tripura - Unakoti
+			</option>
+			<option value='621'>
+			Tripura - West Tripura
+			</option>
+			<option value='622'>
+			Uttar Pradesh - Agra
+			</option>
+			<option value='624'>
+			Uttar Pradesh - Prayagraj
+			</option>
+			<option value='625'>
+			Uttar Pradesh - Ambedkar Nagar
+			</option>
+			<option value='626'>
+			Uttar Pradesh - Amethi
+			</option>
+			<option value='627'>
+			Uttar Pradesh - Amroha
+			</option>
+			<option value='628'>
+			Uttar Pradesh - Auraiya
+			</option>
+			<option value='629'>
+			Uttar Pradesh - Azamgarh
+			</option>
+			<option value='630'>
+			Uttar Pradesh - Badaun
+			</option>
+			<option value='632'>
+			Uttar Pradesh - Bahraich
+			</option>
+			<option value='633'>
+			Uttar Pradesh - Balarampur
+			</option>
+			<option value='634'>
+			Uttar Pradesh - Ballia
+			</option>
+			<option value='635'>
+			Uttar Pradesh - Banda
+			</option>
+			<option value='636'>
+			Uttar Pradesh - Barabanki
+			</option>
+			<option value='637'>
+			Uttar Pradesh - Bareilly
+			</option>
+			<option value='638'>
+			Uttar Pradesh - Basti
+			</option>
+			<option value='639'>
+			Uttar Pradesh - Bijnour
+			</option>
+			<option value='640'>
+			Uttar Pradesh - Bulandshahr
+			</option>
+			<option value='641'>
+			Uttar Pradesh - Chandauli
+			</option>
+			<option value='642'>
+			Uttar Pradesh - Chitrakoot
+			</option>
+			<option value='643'>
+			Uttar Pradesh - Deoria
+			</option>
+			<option value='644'>
+			Uttar Pradesh - Etah
+			</option>
+			<option value='645'>
+			Uttar Pradesh - Etawah
+			</option>
+			<option value='646'>
+			Uttar Pradesh - Ayodhya
+			</option>
+			<option value='647'>
+			Uttar Pradesh - Farrukhabad
+			</option>
+			<option value='648'>
+			Uttar Pradesh - Fatehpur
+			</option>
+			<option value='649'>
+			Uttar Pradesh - Firozabad
+			</option>
+			<option value='650'>
+			Uttar Pradesh - Gautam Buddha Nagar
+			</option>
+			<option value='651'>
+			Uttar Pradesh - Ghaziabad
+			</option>
+			<option value='652'>
+			Uttar Pradesh - Ghazipur
+			</option>
+			<option value='653'>
+			Uttar Pradesh - Gonda
+			</option>
+			<option value='654'>
+			Uttar Pradesh - Gorakhpur
+			</option>
+			<option value='655'>
+			Uttar Pradesh - Hamirpur
+			</option>
+			<option value='656'>
+			Uttar Pradesh - Hapur
+			</option>
+			<option value='657'>
+			Uttar Pradesh - Hardoi
+			</option>
+			<option value='658'>
+			Uttar Pradesh - Hathras
+			</option>
+			<option value='659'>
+			Uttar Pradesh - Jalaun
+			</option>
+			<option value='660'>
+			Uttar Pradesh - Jaunpur
+			</option>
+			<option value='661'>
+			Uttar Pradesh - Jhansi
+			</option>
+			<option value='662'>
+			Uttar Pradesh - Kannauj
+			</option>
+			<option value='663'>
+			Uttar Pradesh - Kanpur Dehat
+			</option>
+			<option value='665'>
+			Uttar Pradesh - Kasganj
+			</option>
+			<option value='666'>
+			Uttar Pradesh - Kaushambi
+			</option>
+			<option value='667'>
+			Uttar Pradesh - Kushinagar
+			</option>
+			<option value='668'>
+			Uttar Pradesh - Lakhimpur Kheri
+			</option>
+			<option value='669'>
+			Uttar Pradesh - Lalitpur
+			</option>
+			<option value='670'>
+			Uttar Pradesh - Lucknow
+			</option>
+			<option value='671'>
+			Uttar Pradesh - Maharajganj
+			</option>
+			<option value='672'>
+			Uttar Pradesh - Mahoba
+			</option>
+			<option value='673'>
+			Uttar Pradesh - Mainpuri
+			</option>
+			<option value='674'>
+			Uttar Pradesh - Mathura
+			</option>
+			<option value='675'>
+			Uttar Pradesh - Mau
+			</option>
+			<option value='677'>
+			Uttar Pradesh - Mirzapur
+			</option>
+			<option value='678'>
+			Uttar Pradesh - Moradabad
+			</option>
+			<option value='679'>
+			Uttar Pradesh - Muzaffarnagar
+			</option>
+			<option value='680'>
+			Uttar Pradesh - Pilibhit
+			</option>
+			<option value='681'>
+			Uttar Pradesh - Raebareli
+			</option>
+			<option value='682'>
+			Uttar Pradesh - Pratapgarh
+			</option>
+			<option value='685'>
+			Uttar Pradesh - Sambhal
+			</option>
+			<option value='686'>
+			Uttar Pradesh - Sant Kabir Nagar
+			</option>
+			<option value='687'>
+			Uttar Pradesh - Bhadohi
+			</option>
+			<option value='689'>
+			Uttar Pradesh - Shamli
+			</option>
+			<option value='690'>
+			Uttar Pradesh - Shravasti
+			</option>
+			<option value='691'>
+			Uttar Pradesh - Siddharthnagar
+			</option>
+			<option value='692'>
+			Uttar Pradesh - Sitapur
+			</option>
+			<option value='694'>
+			Uttar Pradesh - Sultanpur
+			</option>
+			<option value='695'>
+			Uttar Pradesh - Unnao
+			</option>
+			<option value='697'>
+			Uttarakhand - Dehradun
+			</option>
+			<option value='698'>
+			Uttarakhand - Pauri Garhwal
+			</option>
+			<option value='699'>
+			Uttarakhand - Chamoli
+			</option>
+			<option value='701'>
+			Uttarakhand - Tehri Garhwal
+			</option>
+			<option value='702'>
+			Uttarakhand - Haridwar
+			</option>
+			<option value='704'>
+			Uttarakhand - Almora
+			</option>
+			<option value='705'>
+			Uttarakhand - Udham Singh Nagar
+			</option>
+			<option value='706'>
+			Uttarakhand - Pithoragarh
+			</option>
+			<option value='707'>
+			Uttarakhand - Bageshwar
+			</option>
+			<option value='708'>
+			Uttarakhand - Champawat
+			</option>
+			<option value='709'>
+			Uttarakhand - Nainital
+			</option>
+			<option value='713'>
+			West Bengal - Birbhum
+			</option>
+			<option value='726'>
+			West Bengal - Malda
+			</option>
+			<option value='733'>
+			West Bengal - Purulia
+			</option>
+			<option value='734'>
+			West Bengal - Rampurhat HD (Birbhum)
+			</option>
+			<option value='768'>
+			Assam - South Salmara Mankachar
+			</option>
+			<option value='769'>
+			Assam - West Karbi Anglong
+			</option>
+			<option value='771'>
+			Gujarat - Bhavnagar Corporation
+			</option>
+			<option value='777'>
+			Gujarat - Vadodara Corporation
+			</option>
+			<option value='779'>
+			Tamil Nadu - Aranthangi
+			</option>
+			<option value='780'>
+			Tamil Nadu - Kovilpatti
+			</option>
+			<option value='781'>
+			Tamil Nadu - Ranipet
+			</option>
+			<option value='783'>
+			West Bengal - COOCHBEHAR
+			</option>
+			<option value='796'>
+			Lakshadweep - Agatti Island
+			</option>
+		</select>
+		<button onclick=districtAPI()>Get by DISTRICT</button>
+		<hr>
+		<div id=output></div>
+		<script type="text/javascript">
+			function pinAPI() {
+				let out=document.getElementById("output");
+				let pin=document.getElementById("pin").value;
+				let day=document.getElementById("day").value;
+				let month=document.getElementById("month").value;
+				let year=document.getElementById("year").value;
+				let date=day+"-"+month+"-"+year;
+				let url="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode="+pin+"&date="+date;
+				let api = new XMLHttpRequest();
+	            api.open("GET", url, false);
+	            api.send();
+	            if (api.status==200) {
+	            	var results = JSON.parse(api.response);
+	            	out.innerHTML="Found "+results.sessions.length+" results!<hr>";
+	            	results.sessions.forEach(c => {
+	            		out.innerHTML+="Center ID: "+c.center_id+"<br>";
+	            		out.innerHTML+="Name: "+c.name+"<br>";
+	            		out.innerHTML+="Address: "+c.address+", "+c.district_name+", "+c.state_name+". "+c.pincode+"<br>";
+	            		out.innerHTML+="Slots: "+c.slots+"<br>";
+	            		out.innerHTML+="Vaccine: "+c.vaccine+"<br>";
+	            		out.innerHTML+="Minimum Age: "+c.min_age_limit+"<br>";
+	            		out.innerHTML+="Fee: "+c.fee+"<br>";
+	            		out.innerHTML+="Available Capacity: "+c.available_capacity+"<br>";
+	            		out.innerHTML+="<hr>";
+	            	})
+	            } else {
+	            	alert("API is down, try again later.")
+	            }
+			}
+			function districtAPI() {
+				let out=document.getElementById("output");
+				let district=document.getElementById("district").value;
+				let day=document.getElementById("day").value;
+				let month=document.getElementById("month").value;
+				let year=document.getElementById("year").value;
+				let date=day+"-"+month+"-"+year;
+				let url="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id="+district+"&date="+date;
+				let api = new XMLHttpRequest();
+	            api.open("GET", url, false);
+	            api.send();
+	            if (api.status==200) {
+	            	var results = JSON.parse(api.response);
+	            	console.log(results);
+	            	out.innerHTML="Found "+results.sessions.length+" results!<hr>";
+	            	results.sessions.forEach(c => {
+	            		out.innerHTML+="Center ID: "+c.center_id+"<br>";
+	            		out.innerHTML+="Name: "+c.name+"<br>";
+	            		out.innerHTML+="Address: "+c.address+", "+c.district_name+", "+c.state_name+". "+c.pincode+"<br>";
+	            		out.innerHTML+="Slots: "+c.slots+"<br>";
+	            		out.innerHTML+="Vaccine: "+c.vaccine+"<br>";
+	            		out.innerHTML+="Minimum Age: "+c.min_age_limit+"<br>";
+	            		out.innerHTML+="Fee: "+c.fee+"<br>";
+	            		out.innerHTML+="Available Capacity: "+c.available_capacity+"<br>";
+	            		out.innerHTML+="<hr>";
+	            	})
+	            } else {
+	            	alert("API is down, try again later.");
+	            }
+			}
+		</script>
+	</body>
+</html>
