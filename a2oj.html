@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>A2OJ Tracker</title>
+</head>
+<body>
+	<h1>Track your A2OJ Ladder Progress</h1>
+	<input type="text" name="handle" id="handle">Codeforces Handle</input>
+	<select name="ladder" id="ladder">
+		<option value="11">Codeforces Rating < 1300</option>
+		<option value="12">1300 <= Codeforces Rating <= 1399</option>
+		<option value="13">1400 <= Codeforces Rating <= 1499</option>
+		<option value="14">1500 <= Codeforces Rating <= 1599	</option>
+		<option value="15">1600 <= Codeforces Rating <= 1699</option>
+		<option value="16">1700 <= Codeforces Rating <= 1799</option>
+		<option value="17">1800 <= Codeforces Rating <= 1899</option>
+		<option value="18">1900 <= Codeforces Rating <= 1999</option>
+		<option value="19">2000 <= Codeforces Rating <= 2099</option>
+		<option value="20">2100 <= Codeforces Rating <= 2199</option>
+		<option value="21">Codeforces Rating >= 2200	</option>
+		<option value="22">Codeforces Rating < 1300 (Extra)	</option>
+		<option value="23">1300 <= Codeforces Rating <= 1399 (Extra)	</option>
+		<option value="24">1400 <= Codeforces Rating <= 1499 (Extra)</option>
+		<option value="25">1500 <= Codeforces Rating <= 1599 (Extra)</option>
+		<option value="26">1600 <= Codeforces Rating <= 1699 (Extra)</option>
+		<option value="27">1700 <= Codeforces Rating <= 1799 (Extra)	</option>
+		<option value="28">1800 <= Codeforces Rating <= 1899 (Extra)</option>
+		<option value="29">1900 <= Codeforces Rating <= 1999 (Extra)	</option>
+		<option value="30">2000 <= Codeforces Rating <= 2099 (Extra)</option>
+		<option value="31">2100 <= Codeforces Rating <= 2199 (Extra)	</option>
+		<option value="32">Codeforces Rating >= 2200 (Extra)</option>
+		<option value="4">Codeforces Div. 2, A	</option>
+		<option value="5">Codeforces Div. 2, B	</option>
+		<option value="6">Codeforces Div. 2, C	</option>
+		<option value="7">Codeforces Div. 2, D	</option>
+		<option value="8">Codeforces Div. 2, E	</option>
+		<option value="9">Codeforces Div. 1, D	</option>
+		<option value="10">Codeforces Div. 1, E	</option>
+	</select>
+	<button onclick="getLadder()">GET</button>
+	<div id="a2oj"></div>
+	<script type="text/javascript">
+		function load(url) {
+			let page = new XMLHttpRequest();
+			page.open("GET", url, false);
+			page.send();
+			document.getElementById("a2oj").innerHTML=page.response;
+		}
+		function getUser(handle) {
+			let url = "https://codeforces.com/api/user.status?handle="+handle;
+			let api = new XMLHttpRequest();
+			api.open("GET", url, false);
+			api.send();
+			return JSON.parse(api.responseText).result;
+		}
+		function getLadder() {
+			let ladder="https://a2oj.com/Ladder"+document.getElementById('ladder').value+".html";
+			load(ladder);
+			let u = getUser(document.getElementById('handle').value);
+			let a = document.getElementsByTagName('a');
+			for (let i=0; i<a.length; i++) {
+				let index = a[i].href.split('/').reverse()[0];
+				let contestId = Number(a[i].href.split('/').reverse()[1]);
+				for (let j=0; j<u.length; j++) {
+					if (u[j]["problem"]["contestId"] == contestId && u[j]["problem"]["index"] == index) {
+						a[i].href = "https://codeforces.com/contest/"+String(u[j]["contestId"])+"/submission/"+String(u[j]["id"]);a
+						a[i].innerText += "  ["+u[j]["verdict"]+"]";
+						a[i].parentElement.parentElement.style.backgroundColor="#888";
+						if (u[j]["verdict"] == "OK") 
+							a[i].parentElement.parentElement.style.backgroundColor="#0f0";
+						if (u[j]["verdict"] == "WRONG_ANSWER") 
+							a[i].parentElement.parentElement.style.backgroundColor="#f00";
+						if (u[j]["verdict"] == "TIME_LIMIT_EXCEEDED") 
+							a[i].parentElement.parentElement.style.backgroundColor="#ff0";
+						break;	
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>
