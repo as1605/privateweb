@@ -3,50 +3,19 @@
 		<title>
 			Aditya Singh
 		</title> 
-		<style>
-			* {
-				font-family: monospace;
-				font-size: 1.1rem;
-			}
-			h1 {
-				text-align: center;
-				font-size: 2rem;
-			}
-			h3 {
-				text-align: center;
-				font-size: 1.5rem;
-			}
-			h4 {
-				text-align: center;
-				font-size: 1.25rem;
-			}
-			a {
-				font-weight: bold;
-				text-decoration: none;
-			}
-			header {
-				text-align: center;
-			}
-			hr {
-				border-style: solid;
-			}
-			code {
-				font-weight: bold;
-				font-size: 1.0rem;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<header>
 			<h1>Hello World!</h1>
 			<h3>Welcome to the personal webpage of Aditya Singh</h3>
 		</header>
-		<div style= "display: flex; justify-content: space-evenly;">
-			<a style="color: #0A66C2" target="_blank" href="https://www.linkedin.com/in/1605-aditya-singh/">LinkedIn</a>
-			<a style="color: #333333" target="_blank" href="https://github.com/as1605">GitHub</a>
-			<a style="color: #1F8ACB" target="_blank" href="https://codeforces.com/profile/as1605">CodeForces</a>
-			<a style="color: #5B4638" target="_blank" href="https://www.codechef.com/users/as1605">CodeChef</a>
-			<a style="color: #4FCE5D" target="_blank" href="https://api.whatsapp.com/send/?phone=919013047722">WhatsApp</a>
+		<div class="contact">
+			<a class="linkedin" target="_blank" href="https://www.linkedin.com/in/1605-aditya-singh/">LinkedIn</a>
+			<a class="github" target="_blank" href="https://github.com/as1605">GitHub</a>
+			<a class="codeforces" target="_blank" href="https://codeforces.com/profile/as1605">CodeForces</a>
+			<a class="codechef" target="_blank" href="https://www.codechef.com/users/as1605">CodeChef</a>
+			<a class="whatsapp" target="_blank" href="https://api.whatsapp.com/send/?phone=919013047722">WhatsApp</a>
 		</div>
 		<hr/>
 		<section>
@@ -198,34 +167,9 @@ You can explore other filter settings and create more to organise your inbox.
 		<footer>
 			<a name="wisdom"></a>
 			<h3>Words of Wisdom</h3>
-			<div id="wisdom" style="font-style: italic;"></div>
+			<div id="wisdom"></div>
 			<br><br>
 		</footer>
-		<script type="text/javascript">
-			function f() {
-				let wisdom=[
-					"In the last two months, we have all seen vividly what 'chalta hai' did to the country. If such a searing experience is not sufficient for you to cast off the highly self-destructive 'chalta hai' habits, then perhaps you can treat the consequent loss of prorated scores with the same nonchalance. We will do our level best to help, but there are obvious limits to that.",
-					"A suggestion for your professional life: please don't go about bombarding people's inboxes with whining about consequences of something you did / did not do. Think about what you do if you are spammed by someone who persists in ignoring your previous suggestions to him/her - you ignore what they have to say.",
-					"This has been a rough semester for all of us - many were ill, had illness in their family, etc. Everyone - students, TAs, and instructors were badly affected during the ongoing pandemic. Some sadly even lost relatives to Covid-19. Our prayers are with you. During the peak of the second wave, even doctors were hard to come by, even if you were ill yourself. This was a rough time, and our sympathies are naturally with you.",
-					"You are all training to be scientists or engineers. Please do not dismiss numerical precision so cavalierly, especially when you have been cautioned against being careless in the question. In many professions, being off by a small amount can lead to disaster.\n\nThis is why good engineers invest in safety margins, and you cannot know where your safety margins are unless you are as precise as possible in your calculations. In a more realistic scenario than on an exam, you would additionally pay attention to significant figures, and figure out not only the precision, but also how accurate your calculations are capable of being.",
-					"Unfortunately, you are wrong. Experiments are conducted to get the most reliable results. Whether that is a 'boring' experiment like this one where the result of the experiment is already largely known, and you do not anticipate surprise, or a 'real' experiment in a research lab where you are trying to find the result of a measurement, there is never a good reason to cut corners unless you are so resource starved that you are forced to think that way. Fortunately, that has not been the case in our labs for a very long time.",
-					"The moment you become more interested in the question 'how many marks' rather than 'what is the right way to think about this', you have lost sight of why you are in school.\n\nI know that school training often tries to create robots rather than thinkers, but please leave that junk behind. You are in IIT, and you should be using this opportunity to expand your mind.\n\nLeave such considerations to your instructors.",
-					"A few students were unable to submit the assignment due to illness, or sadly in some cases, a personal loss. I grieve with you for your loss, and pray that God give you the strength you are going to need.\n\nPlease concentrate on getting well. What is going on is unprecedented in our country's history, and it is going to change the world in some permanent ways at several levels.\n\nDo not worry about the assignment if you missed it. Please post a medical certificate, or a personal statement explaining why you missed it, on the student illness reporting forum when you feel you are able to.\n\nPlease let us all concentrate on healing in the many ways that healing is necessary. You have my support, as well as sympathies.",
-					"IIT has always been about excellence and hard work in academics. Sure, we had cheaters in our time, but those were corner cases that eked out a meager academic existence, got caught sooner or later, and faced the consequences.\n\nThe pandemic has thrown up new challenges to exams. We designed the midterm to be such an odd experience because I was disgusted by more than 50 emails from students expressing their dissatisfaction with the cheating going on, their legitimate questions about the sanctity of exams, and the practical effect of that on grading.\n\nPlease consider the midterm experience, and the changed weightage above to be our initial attempt to answer that demand from the many honorable students.  Many patterns of cheaters have been noticed, and you can be certain that the lessons we learned in the midterm will be used to further refine the endterm strategy. No guarantees, but there are few more disgusting sights in academics than cheaters, and it is our collective will that we will not let them prosper. Even if they escape with a C average, or a better score, professional life has a way of sorting out such chaff from the rest - a lazy person with a malleable character is never good at his or her job, and the market tends to take care of such people.",
-					"It is never too early to get involved with professional bodies in your area. Benefits:\n\tCareer guidance, mentorship and networking.\n\tExposure to areas with significant growth.\n\tDiscounts for professional activities, conferences, publications, etc.",
-					"Chalta hai may have a certain amount of sick acceptance in our society and in many others, but it is a crap philosophy on which to base a career, or anything bigger than that, like a modern India. Leave it for casual conversation with disinterested individuals. Don't infect your thinking with it. Being a little OCD is almost a requirement for good and careful engineers or scientists. It matters not just in calculations, but also in experimental protocols.",
-					"It is satisfying to note that most students understood the problem perfectly, and solved the problem correctly. Unsurprisingly, the number of students who have scored full on that question closely matches the number of students who a) read lecture descriptions posted on Moodle after each lecture, and b) actually watch the lecture.\n\nAs to the rest, please pay attention to the study materials that are provided to you. Skimming over study materials may work as a learning strategy for some parts of some subjects. However, it can fail when you need to understand in addition to merely know.",
-					"Too early to worry about the grade card, isn't it?",
-					"When I taught this course last, about 5-6 years ago, a student had asked me about how the diode equation had come about. Being new to the job at the time, I asked the roughly 500 students in class if they really wanted an answer to the question. The next evening, I held a 3-hour class in the LHC, and gave them one of the more bruising crash courses in introductory device physics, mollifying the students with a promise to not put any of what was taught in the class on the exam.\n\nFinally, when we finished at a few minutes shy of 8 PM, the student mood was split between wonderment, bewilderment, and outright information overload. Reason was obvious - the students just did not yet have the background to understand everything in spite of my attempt to make it simpler. Some things cannot be taught before sophomore year. Many students were happy about it, but most did not like the experience even if did not affect the exam.",
-					"One more suggestion since many of you have been damaged by the 'teach to the test' philosophy that infects most of the education system (this was only slightly better for us back in the day): you take care of your understanding of concepts, and exams will take care of themselves.\n\nLearning for a test is a singularly pointless exercise (I have sometimes done this myself as a student for certain courses, so I know the temptation) - why stress out your mind with facts you do not understand on the last day of studies, regurgitate stuff you do not really know, and then wonder why the course is useless? Much better plan (even if you are not interested in the material): learn as much as your mind or interest will permit, and exhibit your understanding at exams when they occur. ",
-					"I have been somewhat surprised by the type of questions on syllabus for the upcoming quiz. They exhibit a certain amount of naivete about the IIT system.\n\nI addressed this in the introductory lecture, so I will do this one last time not just for this course but for *all* courses.\n\nThe syllabus of any exam (quiz, midterm, etc.) is the stuff that was covered in class after the last such exam. Even and especially if it involves classes that finished 5 minutes before the exam starts. In my own first year of study at IIT, that fact was made crystal clear in the orientation itself. We often had a class ending at 8:30 PM the previous day and the stuff was on a midterm or endterm the next morning at 7 AM. It did not matter whether it was the last quiz in a 4th or 5th year course, or it was the first quiz or midterm in the first semester in the first year. The whole purpose of the constant evaluation philosophy is to make sure that you are prepared with the contents of a course at any given time.\n\nWe certainly did not have these fancy study days between classes and exams that are distressingly common now days at IIT Delhi. Further, all our quizzes were surprise quizzes in the first year itself. If you were too lazy or disorganized to get to a tutorial on the day a surprise quiz was organized, you missed it and got a zero, end of discussion. So, you always went to tutorials or lectures. People who missed a lot of quizzes got an express ticket to a worse grade, wryly joking about their inability to wake up, and that was it.\n\nOwing to logistical issues at present, we are unable to sensibly organize surprise/spot quizzes.\n\nSo, being prepared, up to date, and ready to go at any time, is, and always has been the IIT way.\n\nNo more pointless questions about syllabus in this course or any others, please. Please focus on your learning in these challenging circumstances, and leave the difficult business of logistics to us. We will all do our respective bests, and that is all one can promise.",
-					"I was hoping that someone would pose this question. I thought I had left an invitation for this question and I would get bombarded with this question (or variants) within a couple of days. I am glad that it happened at all!",
-					"I am not a statistician. I am an experimentalist device engineer who does a significant amount of materials science in his work. So, my own precise mathematical understanding of error is obviously going to be inferior to that of someone who does this full time for a living. ",
-					"You have perhaps unwittingly referenced an old debate in measurement reporting - absolute or average deviations (the school method for calculating the error) vs standard deviations. Mathematically, it can be proven that the standard deviation is a superior measure, provided your data follows the normal probability curve.",
-					];
-				document.getElementById('wisdom').innerText=wisdom[Math.floor(Math.random()*wisdom.length)];
-			}
-			f();
-		</script>
+		<script type="text/javascript" src="script.js"></script>
 	</body>
 </html>

@@ -1,0 +1,52 @@
+* {
+	font-family: monospace;
+	font-size: 1.1rem;
+}
+h1 {
+	text-align: center;
+	font-size: 2rem;
+}
+h3 {
+	text-align: center;
+	font-size: 1.5rem;
+}
+h4 {
+	text-align: center;
+	font-size: 1.25rem;
+}
+a {
+	font-weight: bold;
+	text-decoration: none;
+}
+header {
+	text-align: center;
+}
+hr {
+	border-style: solid;
+}
+code {
+	font-weight: bold;
+	font-size: 1.0rem;
+}
+.contact {
+	display: flex;
+	justify-content: space-evenly;
+}
+.linkedin {
+	color: #0A66C2;
+}
+.github {
+	color: #333333;
+}
+.codeforces {
+	color: #1F8ACB;
+}
+.codechef {
+	color: #5B4638;
+}
+.whatsapp {
+	color: #4FCE5D;
+}
+#wisdom {
+	font-style: italic;
+}
